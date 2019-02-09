@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app.title">Simpsons Trivia</string>
+
+    <string name="options.title_text.speed">"S P E E D   M O D E"</string>
+    <string name="options.title_text.classic">"C H A L L E N G E   M O D E"</string>
+    <string name="shared_prefs.user">com.triviaholics.simpsonstrivia.User_Preferences</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/results.bottom.height"
+    android:id="@+id/bottomBarLayout"
+    android:background="@drawable/divider_top"
+    tools:showIn="@layout/activity_results">
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/results.bottom.height"
+        android:layout_weight=".25"
+        android:text="@string/results.bottom_bar_buttons.home"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-medium"
+        android:background="@drawable/rounded_corners_button_transparent"
+        android:textSize="@dimen/results.bottom.text" />
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/results.bottom.height"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_weight=".75"
+        android:text="@string/results.bottom_bar_buttons.play_again"
+        android:textSize="@dimen/results.bottom.text"
+        android:textAllCaps="true"
+        android:textColor="@color/results.bottom.button.text"
+        android:fontFamily="sans-serif-medium"
+        android:background="@drawable/rounded_corners_button"
+        style="?android:attr/borderlessButtonStyle" />
+
+</LinearLayout>

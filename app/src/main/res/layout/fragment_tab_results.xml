@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/root_final_score_layout">
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/results.main.circle.size"
+        android:layout_height="@dimen/results.main.circle.size"
+        android:background="@drawable/chart_back_circle"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/results.main.margin.top"
+        android:id="@+id/FinalChartContainer">
+
+        <View android:id="@+id/strut"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            android:layout_centerInParent="true" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/finalScoreChart"
+            android:layout_width="@dimen/results.main.chart.size"
+            android:layout_height="@dimen/results.main.chart.size"
+            android:layout_centerInParent="true" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/score_container"
+            android:layout_above="@+id/strut">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="13000"
+                android:id="@+id/finalScore"
+                android:textSize="@dimen/results.main.score.size"
+                android:includeFontPadding="false"
+                android:layout_marginBottom="-3dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/final_score_text_container"
+            android:layout_below="@+id/score_container">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Final Score"
+                android:id="@+id/finalScoreText"
+                android:textSize="@dimen/results.main.final_score_text.size"
+                android:layout_marginTop="-3dp" />
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:baselineAligned="false"
+        android:layout_marginTop="@dimen/results.small_charts.margin.top">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/results.raw.margin"
+            android:id="@+id/RawScoreGlobalContainer">
+
+            <FrameLayout
+                android:layout_width="@dimen/results.raw.circle.size"
+                android:layout_height="@dimen/results.raw.circle.size"
+                android:id="@+id/RawScoreChartContainer"
+                android:layout_gravity="right"
+                android:visibility="visible"
+                android:background="@drawable/chart_back_circle">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/rawChart"
+                    android:layout_width="@dimen/results.raw.chart.size"
+                    android:layout_height="@dimen/results.raw.chart.size"
+                    android:layout_gravity="center" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/RawScoreContainer">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="2200"
+                    android:id="@+id/rawScore"
+                    android:textSize="@dimen/results.raw.score.size"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="-3dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/RawScoreTextContainer">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Raw Score"
+                    android:id="@+id/rawScoreText"
+                    android:textSize="@dimen/results.raw.final_score_text.size"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="-2dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/RawScoreRightOutOfWrongContainer">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14 / 20"
+                    android:id="@+id/rawScoreNumCorrect"
+                    android:textSize="@dimen/results.raw.final_score_text.size"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="-2dp" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/BonusScoreGlobalContainer"
+            android:layout_marginLeft="@dimen/results.raw.margin">
+
+            <FrameLayout
+                android:layout_width="@dimen/results.bonus.circle.size"
+                android:layout_height="@dimen/results.bonus.circle.size"
+                android:background="@drawable/chart_back_circle"
+                android:id="@+id/BonusScoreChartContainer"
+                android:layout_gravity="left">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/bonusChart"
+                    android:layout_width="@dimen/results.bonus.chart.size"
+                    android:layout_height="@dimen/results.bonus.chart.size"
+                    android:layout_gravity="center" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/BonusScoreContainer">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="1500"
+                    android:id="@+id/bonusScore"
+                    android:textSize="@dimen/results.bonus.score.size"
+                    android:layout_gravity="left"
+                    android:layout_marginBottom="-3dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/BonusScoreTextContainer">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bonus Score"
+                    android:id="@+id/bonusScoreText"
+                    android:textSize="@dimen/results.bonus.final_score_text.size"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="-2dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/BonusScoreRightOutOfWrongContainer">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4 / 5"
+                    android:id="@+id/bonusScoreNumCorrect"
+                    android:textSize="@dimen/results.bonus.final_score_text.size"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="-2dp" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

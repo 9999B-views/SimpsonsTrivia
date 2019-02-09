@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout android:id="@+id/RootFrameLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout
+        android:id="@+id/CircularRevealTarget"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/TitleText"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="@dimen/main.title_text.margin.margin_top"
+            android:text="T  R  I  V  I  A  B  I  L  I  T  I  E  S"
+            android:textColor="@color/main.text.triviabilities"
+            android:fontFamily="sans-serif-light"
+            android:textSize="@dimen/main.title_text.font.size"
+            android:gravity="center_horizontal" />
+
+        <io.codetail.widget.RevealFrameLayout
+            android:id="@+id/QuestionContainerContainer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/main.title_sub_text.margin.margin_left_right"
+            android:paddingRight="@dimen/main.title_sub_text.margin.margin_left_right"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/TitleSubText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:minHeight="200dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/title_graphic" />
+
+        </io.codetail.widget.RevealFrameLayout>
+
+        <Button
+            android:id="@+id/ChallengeButton"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/main.buttons.height"
+            android:layout_marginLeft="@dimen/main.buttons.margin.left_right"
+            android:layout_marginRight="@dimen/main.buttons.margin.left_right"
+            android:layout_marginTop="@dimen/main.buttons.margin.top"
+            android:background="@drawable/rounded_corners_button"
+            android:textColor="@color/main.buttons.text"
+            android:textSize="@dimen/main.buttons.text_size"
+            android:text="@string/main.button.classic"
+            android:gravity="center"
+            android:typeface="sans"
+            android:stateListAnimator="@animator/button_elevation" />
+
+        <Button
+            android:id="@+id/SpeedChallengeButton"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/main.buttons.height"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="@dimen/main.buttons.margin.left_right"
+            android:layout_marginRight="@dimen/main.buttons.margin.left_right"
+            android:layout_marginTop="@dimen/main.buttons.margin.space_between_classic_speed"
+            android:background="@drawable/rounded_corners_button"
+            android:textColor="@color/main.buttons.text"
+            android:textSize="@dimen/main.buttons.text_size"
+            android:text="@string/main.button.speed"
+            android:typeface="sans"
+            android:stateListAnimator="@animator/button_elevation" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/PrivacyPolicy"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:alpha="0"
+        android:text="Privacy Policy"
+        android:textColor="@color/main.text.privacy_policy"
+        android:textSize="10sp"
+        tools:alpha="100" />
+</FrameLayout>

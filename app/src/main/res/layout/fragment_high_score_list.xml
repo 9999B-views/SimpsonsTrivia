@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ListContainer">
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        android:id="@+id/gameModePicker"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@android:id/list"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/gameModePicker"
+        tools:listitem="@layout/high_score_list_item"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:layout_width="@dimen/leaderboard.no_wifi.image.width"
+        android:layout_height="wrap_content"
+        android:id="@+id/noWiFi"
+        android:layout_gravity="center"
+        android:src="@drawable/graphic_cloud"
+        android:visibility="gone"
+        android:adjustViewBounds="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/results.no_wifi.no_connection"
+        android:id="@+id/no_connection_text"
+        android:layout_below="@+id/noWiFi"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/results.no_wifi.tap_to_refresh"
+        android:gravity="center_horizontal"
+        android:id="@+id/tap_to_refresh_text"
+        android:layout_below="@+id/no_connection_text"
+        android:layout_alignLeft="@+id/no_connection_text"
+        android:layout_alignStart="@+id/no_connection_text"
+        android:visibility="gone"
+        />
+
+
+</RelativeLayout>
